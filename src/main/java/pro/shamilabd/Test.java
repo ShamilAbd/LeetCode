@@ -1,28 +1,41 @@
 package pro.shamilabd;
 
+import org.w3c.dom.xpath.XPathResult;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class Test {
 
+
     public static void main(String[] args) {
-        System.out.println(myPow(2.0, 10));
-        System.out.println(myPow(2.1, 3));
-        System.out.println(myPow(2.0, -2));
-        System.out.println(myPow(0.00001, 2147483647));
-        System.out.println(myPow(2.0, -2147483648));
+        System.out.println(mySqrt(4));
+        System.out.println(mySqrt(8));
+        System.out.println(mySqrt(9));
     }
 
-    public static double myPow(double x, int n) {
-        if (n == 0 || x == 1) {
-            return 1;
-        }
-        double res = 1.0;
-        long s = Math.abs((long) n);
-        while (s > 0) {
-            if (s % 2 == 1) {
-                res *= x;
+    // Перерешивал
+    public static int mySqrt(int x) {
+        // Перерешивал
+        int l = 0;
+        int r = x;
+        int a = -1;
+        while (l <= r) {
+            int m = l + (r - l) / 2;
+            long p = (long) m * m;
+            if (p == x) {
+                return m;
+            } else if (p < x) {
+                a = m;
+                l = m + 1;
+            } else {
+                r = m - 1;
             }
-            x *= x;
-            s /= 2;
         }
-        return n < 0 ? 1 / res : res;
+        return a;
     }
 }

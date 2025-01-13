@@ -11,6 +11,27 @@ public class Sol {
     }
 
     public static char nextGreatestLetter(char[] letters, char target) {
+        // Перерешивал
+        int l = 0;
+        int r = letters.length - 1;
+        int ans = -1;
+        while (l <= r) {
+            int m = l + (r - l) / 2;
+            if (letters[m] > target) {
+                ans = m;
+                r = m - 1;
+            } else {
+                l = m + 1;
+            }
+        }
+        if (ans > -1) {
+            return letters[ans];
+        }
+        return letters[0];
+    }
+
+
+    public static char nextGreatestLetter2(char[] letters, char target) {
         int l = 0;
         int r = letters.length - 1;
         int ans = -1;

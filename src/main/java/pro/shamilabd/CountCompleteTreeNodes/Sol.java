@@ -15,6 +15,14 @@ public class Sol {
     }
 
     public static int countNodes(TreeNode root) {
+        // Перерешивал
+        // не смог бинарно
+        return -1;
+    }
+
+    public static int countNodes2(TreeNode root) {
+        // Перерешивал
+        // не смог бинарно
         if (root == null) return 0;
         int r = 1;
         TreeNode node = root;

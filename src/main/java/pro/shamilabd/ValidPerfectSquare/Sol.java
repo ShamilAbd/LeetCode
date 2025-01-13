@@ -10,6 +10,7 @@ public class Sol {
     }
 
     public static boolean isPerfectSquare(int num) {
+        // Перерешивал
         if (num < 2) return true;
         int l = 2;
         int r = num / 2;

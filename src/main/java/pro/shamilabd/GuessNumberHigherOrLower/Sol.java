@@ -8,6 +8,7 @@ public class Sol {
     }
 
     public static int guessNumber(int n, int gus) {
+        // Перерешивал
         int l = 1;
         int r = n;
         while (l <= r) {

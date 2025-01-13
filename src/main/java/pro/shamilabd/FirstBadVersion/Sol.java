@@ -8,6 +8,7 @@ public class Sol {
     }
 
     public static int firstBadVersion(int n, int b) {
+        // Перерешивал
         int l = 1;
         int r = n;
         int ans = -1;
